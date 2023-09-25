@@ -12,6 +12,34 @@ public class myArrayList {
         this.size = 0;
         this.growthFactor = 1.2;
     }
+    
+
+    public class MyListIterator {
+
+        public MyListIterator() {
+            
+        }
+    
+        public boolean hasNext(Fraction[] a) {
+            
+            boolean next = false;
+            
+            for (int i = 0; i < size; i++) {
+                if (a[i] != null) {
+                    next = true;
+                }
+                else {
+                    next = false;
+                }
+            }
+            return next;
+        }
+
+        public boolean hasPrevious() {
+            
+            return false;
+        }
+}
 
     public int indexOf(Fraction input) {
         for (int i = 0; i < size; i++) {
