@@ -1,11 +1,40 @@
 import java.util.Arrays;
+import java.util.Iterator;
 
 public class myArrayList {
     private Fraction[] array;
     private int size;
     private int cap;
     private double growthFactor;
+    public class MyListIterator implements Iterator<Fraction>{
+        private int currentIndex;
 
+        public MyListIterator() {
+            currentIndex = 0;
+        }
+
+
+        public Fraction next() {
+            if (hasNext()) {
+                return array[currentIndex++];
+            }
+           
+			return null ; 
+        }
+
+        public Fraction previous() {
+            if (hasPrevious()) {
+                return array[--currentIndex];
+            }
+            return null; 
+        }
+
+      
+    }
+
+    public MyListIterator getIterator() {
+        return new MyListIterator();
+    }
     public myArrayList() {
         this.cap = 50;
         this.array = new Fraction[cap];
