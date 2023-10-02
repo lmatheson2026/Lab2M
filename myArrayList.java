@@ -9,8 +9,7 @@ public class myArrayList {
 	private double growthFactor;
 	public class MyListIterator implements Iterator<Fraction>{
 		private int currentIndex;
-
-		public MyListIterator() {
+	public MyListIterator() {
 			
 			currentIndex = 0;
 		}
@@ -20,6 +19,7 @@ public class myArrayList {
 		 *  one index. If not found, throws exception
 		 */
 		public Fraction next() {
+
 
 			if (hasNext()) {
 				return array[currentIndex++];
@@ -40,6 +40,29 @@ public class myArrayList {
 				 throw new NoSuchElementException("No fractions found");;
 			}
 		}
+    
+        public boolean hasNext(Fraction[] a) {
+            
+            boolean next = false;
+            
+            for (int i = 0; i < size; i++) {
+                if (a[i] != null) {
+                    next = true;
+                }
+                else {
+                    next = false;
+                }
+            }
+            return next;
+        }
+
+        public boolean hasPrevious() {
+            
+            return false;
+        }
+}
+
+	
 	}
 	//returns MyListIterator
 	public MyListIterator getIterator() {
